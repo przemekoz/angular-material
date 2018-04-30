@@ -1,0 +1,13 @@
+.form-fields-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-fields-container form > * {
+    width: 100%;
+  }
+  
+  .pointer {
+      cursor: pointer;
+  }
+  

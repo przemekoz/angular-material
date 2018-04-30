@@ -6,7 +6,9 @@ import { HomePageComponent } from './home-page/home-page.component';
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
   { path: '**', component: PageNotFoundComponent },
-//   { path: 'case', loadChildren: '../game/game.module#NewsModule' }
+
+  // or like that: otherwise redirect to home
+  // { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

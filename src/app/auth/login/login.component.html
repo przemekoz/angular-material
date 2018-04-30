@@ -1,3 +1,26 @@
-<p>
-  login works!
-</p>
+<div class="form-fields-container">
+    <h1>Login Form</h1>
+    <form (ngSubmit)="submit()" #loginForm="ngForm">
+        <mat-form-field>
+            <input placeholder="Enter your username" matInput [(ngModel)]="model.username" name="username" #username="ngModel" required
+            />
+            <div *ngIf="username.invalid && (username.dirty || username.touched)">
+                <mat-error *ngIf="username.errors.required">Username name is required.</mat-error>
+            </div>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input placeholder="Enter your password" matInput [(ngModel)]="model.password" name="password" #password="ngModel" [type]="hide ? 'password' : 'text'"
+                minlength="6" required />
+            <mat-icon matSuffix class="pointer" (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+            <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                <mat-error *ngIf="password.errors.required">Password name is required.</mat-error>
+                <mat-error *ngIf="password.errors.minlength">Password must be at least 6 characters long.</mat-error>
+            </div>
+        </mat-form-field>
+
+        <button type="submit" mat-button [disabled]="loading || loginForm.form.invalid">Submit</button>
+        <a routerLink="/register">Register</a>
+    </form>
+    <mat-spinner *ngIf="loading"></mat-spinner>
+</div>
