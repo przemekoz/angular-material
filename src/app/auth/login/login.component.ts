@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { AlertService } from '../../services/alert.service';
+import { User } from '../../user/user';
 
 @Component({
     selector: 'app-login',
@@ -12,7 +13,10 @@ export class LoginComponent implements OnInit {
     hide = true;
     loading = false;
     returnUrl: string;
-    model = {
+    model: User = {
+        id: 0,
+        firstName: '',
+        lastName: '',
         username: null,
         password: null
     };

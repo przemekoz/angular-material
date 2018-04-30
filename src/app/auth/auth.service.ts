@@ -2,11 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import { User } from '../user/user';
 
 @Injectable()
 export class AuthService {
 
-    constructor(private http: HttpClient) {
+    constructor(
+        private http: HttpClient) {
         if (typeof (Storage) === undefined) {
             // @TODO log user dont have Storage
         }
@@ -29,5 +31,9 @@ export class AuthService {
 
     isAuthenticated(): boolean {
         return sessionStorage.getItem('currentUser') !== null;
+    }
+
+    getCurrentUser(): User {
+        return JSON.parse(sessionStorage.getItem('currentUser'));
     }
 }

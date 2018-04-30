@@ -13,6 +13,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { JwtInterceptor } from './jwt.interceptor';
 import { fakeBackendProvider } from './fake-backend-interceptor.service';
 import { AlertService } from './services/alert.service';
+import { UserModule } from './user/user.module';
 
 
 
@@ -28,7 +29,8 @@ import { AlertService } from './services/alert.service';
         AuthModule,
         GameModule,
         HttpClientModule,
-        AppRoutingModule
+        AppRoutingModule,
+        UserModule
     ],
     providers: [
         // provider used to create fake backend

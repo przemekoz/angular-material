@@ -27,10 +27,13 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## To create new peoject
 
 1. ng new angular-material --style=scss
-2. 
+2. create module
+    2.1 `ng g m {moduleName} [--routing] --module=app`
+3. create component
+    3.1 `ng g c {moduleName}/{componentName} --module={moduleName}` 
 
 ## To install ...
 
-1. npm install
-2. [optional] npm install -g @angular/cli
-3. ng serve, ng test, ... etc.
+1. `npm install`
+    1.1 `npm install -g @angular/cli` (optionl)
+3. `ng serve`, `ng test`, ... etc.
