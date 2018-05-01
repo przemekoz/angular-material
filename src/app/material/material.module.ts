@@ -5,6 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
     imports: [
@@ -16,7 +17,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
         MatFormFieldModule,
         MatIconModule,
         BrowserAnimationsModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatToolbarModule
     ],
     exports: [
         MatButtonModule,
@@ -26,7 +28,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
         MatFormFieldModule,
         MatIconModule,
         BrowserAnimationsModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatToolbarModule
     ],
     declarations: []
 })

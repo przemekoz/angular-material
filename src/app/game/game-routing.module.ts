@@ -1,11 +1,36 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { GameComponent } from './game.component';
 import { ListComponent } from './list/list.component';
-import { ViewComponent } from './view/view.component';
+import { DetailComponent } from './detail/detail.component';
+import { TopComponent } from './top/top.component';
 
 const gameRoutes: Routes = [
-    { path: 'game-list', component: ListComponent },
-    { path: 'game-view/:key', component: ViewComponent }
+
+    {
+        path: 'games',
+        component: GameComponent,
+        children: [
+            {
+                path: '',
+                component: ListComponent,
+                children: [
+                    {
+                        path: ':key',
+                        component: DetailComponent
+                    },
+                    {
+                        path: '',
+                        component: TopComponent
+                    }
+                ]
+            }
+        ]
+    }
+
+    // { path: 'games/category/:key', component: BaseComponent },
+    // { path: 'games/view/:key', component: BaseComponent },
+    // { path: 'games', component: BaseComponent },
 ];
 
 @NgModule({
