@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewChecked, ChangeDetectorRef } from '@angular/core';
 import { AuthService } from './auth/auth.service';
 
 @Component({
@@ -6,11 +6,19 @@ import { AuthService } from './auth/auth.service';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewChecked {
     title = 'app';
-    isAuthenticated = null;
 
-    constructor(private authService: AuthService) {
-        this.isAuthenticated = this.authService.isAuthenticated();
+    constructor(
+        private authService: AuthService,
+        private changeDetectorRef: ChangeDetectorRef
+    ) { }
+
+    ngAfterViewChecked() {
+        this.changeDetectorRef.detectChanges();
+    }
+
+    isAuthenticated() {
+        return this.authService.isAuthenticated();
     }
 }

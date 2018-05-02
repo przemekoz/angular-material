@@ -13,24 +13,18 @@ const gameRoutes: Routes = [
         children: [
             {
                 path: '',
-                component: ListComponent,
-                children: [
-                    {
-                        path: ':key',
-                        component: DetailComponent
-                    },
-                    {
-                        path: '',
-                        component: TopComponent
-                    }
-                ]
+                component: TopComponent,
+            },
+            {
+                path: 'detail/:key',
+                component: DetailComponent
+            },
+            {
+                path: 'category/:key',
+                component: ListComponent
             }
         ]
     }
-
-    // { path: 'games/category/:key', component: BaseComponent },
-    // { path: 'games/view/:key', component: BaseComponent },
-    // { path: 'games', component: BaseComponent },
 ];
 
 @NgModule({
