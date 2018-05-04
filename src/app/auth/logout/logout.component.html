@@ -1,14 +1,26 @@
 <div class="container">
     <div class="form">
-        <div class="padding">
-            
-            <p>
-                you have been logout correctly :)
-            </p>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>
+                    Logout
+                </mat-card-title>
+            </mat-card-header>
 
-        </div>
+            <mat-card-content>
+                <p>
+                    You have been logout correctly :)
+                </p>
+
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button mat-button routerLink="/login">LOGIN</button>
+            </mat-card-actions>
+
+        </mat-card>
     </div>
     <footer>
-        <a routerLink="/login">Login again</a>
+        <!-- Footer ... -->
     </footer>
 </div>

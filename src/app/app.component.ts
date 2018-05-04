@@ -9,6 +9,13 @@ import { User } from './user/user';
 })
 export class AppComponent implements AfterViewChecked, OnInit {
     currentUser: User;
+    private defaultUser = {
+        firstName: '',
+        lastName: '',
+        id: 0,
+        username: '',
+        password: ''
+    };
 
     constructor(
         private authService: AuthService,
@@ -16,23 +23,11 @@ export class AppComponent implements AfterViewChecked, OnInit {
     ) { }
 
     ngOnInit() {
-        this.currentUser = {
-            firstName: '',
-            lastName: '',
-            id: 0,
-            username: '',
-            password: ''
-        };
+        this.currentUser = this.defaultUser;
     }
 
     ngAfterViewChecked() {
-        this.currentUser = this.authService.getCurrentUser() || {
-            firstName: '',
-            lastName: '',
-            id: 0,
-            username: '',
-            password: ''
-        };
+        this.currentUser = this.authService.getCurrentUser() || this.defaultUser;
         this.changeDetectorRef.detectChanges();
     }
 

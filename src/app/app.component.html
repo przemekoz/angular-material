@@ -9,15 +9,15 @@
     <span class="toolbar-spacer"></span>
 
     <mat-icon class="toolbar-icon" *ngIf="isAuthenticated()">account_circle</mat-icon>
-    <a routerLink="/logout" *ngIf="isAuthenticated()" matTooltip="Logout">
-        <mat-icon class="toolbar-icon">exit_to_app</mat-icon>
-    </a>
-    <a routerLink="/login" *ngIf="!isAuthenticated()" matTooltip="Login">
-        <mat-icon class="toolbar-icon">input</mat-icon>
-    </a>
-    <a routerLink="/register" *ngIf="!isAuthenticated()" matTooltip="Register">
-        <mat-icon class="toolbar-icon">assignment</mat-icon>
-    </a>
-</mat-toolbar>
 
+    <button mat-icon-button matTooltip="Login" *ngIf="!isAuthenticated()" routerLink="/login">
+        <mat-icon aria-label="Login" class="toolbar-icon">input</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="Register" *ngIf="!isAuthenticated()" routerLink="/register">
+        <mat-icon aria-label="Register" class="toolbar-icon">assignment</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="Logout" *ngIf="isAuthenticated()" routerLink="/logout">
+        <mat-icon aria-label="Logout" class="toolbar-icon">exit_to_app</mat-icon>
+    </button>
+</mat-toolbar>
 <router-outlet></router-outlet>
