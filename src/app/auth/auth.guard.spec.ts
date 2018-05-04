@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 describe('AuthGuard', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
-            providers: [AuthGuard, AuthService, HttpClient, HttpHandler, Router],
+            providers: [AuthGuard, AuthService, HttpClient, HttpHandler, Router]
         });
     });
 
