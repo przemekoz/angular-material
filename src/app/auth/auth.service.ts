@@ -34,6 +34,12 @@ export class AuthService {
     }
 
     getCurrentUser(): User {
-        return JSON.parse(sessionStorage.getItem('currentUser'));
+        return JSON.parse(sessionStorage.getItem('currentUser')) || {
+            id: 0,
+            firstName: '',
+            lastName: '',
+            username: '',
+            password: ''
+        };
     }
 }

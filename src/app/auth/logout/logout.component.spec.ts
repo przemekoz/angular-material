@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { LogoutComponent } from './logout.component';
+import { MaterialModule } from '../../material/material.module';
+import { AuthService } from '../auth.service';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 
 describe('LogoutComponent', () => {
   let component: LogoutComponent;
@@ -8,7 +10,9 @@ describe('LogoutComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LogoutComponent ]
+      declarations: [ LogoutComponent ],
+      imports: [MaterialModule],
+      providers: [AuthService, HttpClient, HttpHandler]
     })
     .compileComponents();
   }));
