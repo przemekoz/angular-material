@@ -1,13 +1,22 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule, MatCheckboxModule, MatInputModule, MatIconModule } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatCardModule } from '@angular/material/card';
+import {
+    MatCheckboxModule,
+    MatInputModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule
+} from '@angular/material';
 
 @NgModule({
     imports: [
@@ -22,7 +31,11 @@ import { MatCardModule } from '@angular/material/card';
         MatSnackBarModule,
         MatToolbarModule,
         MatTooltipModule,
-        MatCardModule
+        MatCardModule,
+        MatGridListModule,
+        MatMenuModule,
+        MatSidenavModule,
+        MatListModule
     ],
     exports: [
         MatButtonModule,
@@ -35,7 +48,11 @@ import { MatCardModule } from '@angular/material/card';
         MatSnackBarModule,
         MatToolbarModule,
         MatTooltipModule,
-        MatCardModule
+        MatCardModule,
+        MatGridListModule,
+        MatMenuModule,
+        MatSidenavModule,
+        MatListModule
     ],
     declarations: []
 })

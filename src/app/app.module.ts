@@ -14,14 +14,18 @@ import { JwtInterceptor } from './jwt.interceptor';
 import { fakeBackendProvider } from './fake-backend-interceptor.service';
 import { AlertService } from './services/alert.service';
 import { UserModule } from './user/user.module';
-
+import { MyDashboardComponent } from './my-dashboard/my-dashboard.component';
+import { MyNavComponent } from './my-nav/my-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 
 @NgModule({
     declarations: [
         AppComponent,
         PageNotFoundComponent,
-        HomePageComponent
+        HomePageComponent,
+        MyDashboardComponent,
+        MyNavComponent
     ],
     imports: [
         BrowserModule,
@@ -30,7 +34,8 @@ import { UserModule } from './user/user.module';
         GameModule,
         HttpClientModule,
         AppRoutingModule,
-        UserModule
+        UserModule,
+        LayoutModule
     ],
     providers: [
         // provider used to create fake backend

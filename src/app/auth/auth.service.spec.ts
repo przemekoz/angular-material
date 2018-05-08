@@ -3,8 +3,7 @@ import { TestBed, inject, fakeAsync } from '@angular/core/testing';
 import { AuthService } from './auth.service';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { User } from '../user/user';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/throw';
+import {throwError as observableThrowError } from 'rxjs';
 
 const empty: User = {
     id: 0,
@@ -58,7 +57,8 @@ describe('AuthService', () => {
 
     it('should get error - wrong usernmae and password (HttpClient called once)', () => {
         service.logout();
-        httpClientSpy.post.and.returnValue(Observable.throw('Username or password is incorrect'));
+
+        httpClientSpy.post.and.returnValue(observableThrowError('Username or password is incorrect'));
 
         service.login('badUsername!@#$%)(*&', 'badPassword!@#$%)(*&').subscribe(
             data => {

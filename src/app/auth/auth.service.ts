@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs';
+
 import { User } from '../user/user';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class AuthService {
@@ -16,13 +17,13 @@ export class AuthService {
 
     login(username: string, password: string) {
         return this.http.post<any>('/api/authenticate', { username: username, password: password })
-            .map(user => {
+            .pipe(map(user => {
                 // login successful if there's a jwt token in the response
                 if (user && user.token) {
                     sessionStorage.setItem('currentUser', JSON.stringify(user));
                 }
                 return user;
-            });
+            }));
     }
 
     logout() {
