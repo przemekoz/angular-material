@@ -1,6 +1,7 @@
 # Angular-Material
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+But after migration is useed [Angular CLI] version 6.0
 
 ## Development server
 
